@@ -1,0 +1,19 @@
+<%- include("../partials/header.ejs") %>
+  <div class="container p-5">
+    <div class="card">
+      <div class="card-header">
+        <h3>Employee Dashboard <a class="btn btn-primary float-right" href="/employee/logout">Logout</a></h3>
+      </div>
+      <div class="card-body">
+        <div class="container text-center">
+          <a class="btn btn-primary m-2" href="/employee/profile">Profile</a>
+          <a class="btn btn-primary m-2" href="/employee/expenses">View Expenses</a>
+          <a class="btn btn-primary m-2" href="/employee/expenses/viewBy">View Expenses By</a>
+          <br/>
+          <br/>
+          <a class="btn btn-primary m-2" href="/employee/expenses/add">Add Expense</a>
+        </div>
+      </div>
+    </div>
+  </div>
+<%- include("../partials/footer.ejs") %>

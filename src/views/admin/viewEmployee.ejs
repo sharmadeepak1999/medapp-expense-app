@@ -1,0 +1,45 @@
+<%- include("../partials/header.ejs") %>
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-header">
+        <h2>View Employee <a class="btn btn-primary float-right m-2" href="/medapp-expense-admin/dashboard">Back to dahsboard</a> <a class="btn btn-primary float-right m-2" href="/medapp-expense-admin/logout">Logout</a></h2>
+      </div>
+      <div class="card-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Employee Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Designation</th>
+              <th scope="col">Department</th>
+              <th scope="col">Avatar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if(employees.length > 0) { %>
+              <% employees.forEach((employee) => { %>
+                <tr>
+                  <td><%= employee.name %></td>
+                  <td><%= employee.email %></td>
+                  <td><%= employee.designation || "Nil" %></td>
+                  <td><%= employee.department || "Nil" %></td>
+                  <td><a href="/medapp-expense-admin/employee/avatar?emp=<%= employee._id %>"><img src="/medapp-expense-admin/employee/avatar?emp=<%= employee._id %>" style="width: 100px"></a></td>
+                </tr>
+              <% }) %>
+            <% } else if(employee) { %>
+                <tr>
+                  <td><%= employee.name %></td>
+                  <td><%= employee.email %></td>
+                  <td><%= employee.designation || "Nil" %></td>
+                  <td><%= employee.department || "Nil" %></td>
+                  <td><a href="/medapp-expense-admin/employee/avatar?emp=<%= employee._id %>"><img src="/medapp-expense-admin/employee/avatar?emp=<%= employee._id%>" style="width: 100px"></a></td>
+                </tr>
+              <% } %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div>
+  </div>
+<%- include("../partials/footer.ejs") %>
